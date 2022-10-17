@@ -58,7 +58,13 @@ btnPlay.addEventListener('click', function(){
             <span>${num}</span>
             `;
             square.addEventListener('click', function(){
-                this.classList.add('safe');
+                for(i = 0; i <= bombsArray.length; i++){
+                    if(num == bombsArray[i]){
+                        square.classList.add('bomb');
+                    } else {
+                        square.classList.add('safe');
+                    }
+                }
             })
             return square;
     } 
