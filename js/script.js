@@ -58,13 +58,16 @@ btnPlay.addEventListener('click', function(){
             <span>${num}</span>
             `;
             square.addEventListener('click', function(){
-                for(i = 0; i <= bombsArray.length; i++){
-                    if(num == bombsArray[i]){
-                        square.classList.add('bomb');
+                    if(bombsArray.includes(num)){
+                        const squares = document.querySelectorAll('.square');
+                        for(let i = 0; i < squares.length; i++){
+                            if(bombsArray.includes(i+1)){
+                                squares[i].classList.add('bomb');
+                            }
+                        }
                     } else {
                         square.classList.add('safe');
                     }
-                }
             })
             return square;
     } 
