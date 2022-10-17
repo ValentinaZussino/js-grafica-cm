@@ -34,8 +34,11 @@ main{
     justify-content: center;
     cursor: pointer;
 }
-.save {
+.safe {
     background-color: rgb(0, 255, 115);
+}
+.bomb {
+    background-color: red;
 }
 footer{
     height: 50px;

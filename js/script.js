@@ -36,7 +36,16 @@ btnPlay.addEventListener('click', function(){
     }
     console.log(level);
     console.log(numSquares);
-    
+    // creo var per numero bombe e array vuoto
+    const numBombs = 16;
+    const bombsArray = [];
+    while(bombsArray.length < numBombs){
+        let bombPosition = randomNumber(1, numSquares);
+        if(!bombsArray.includes(bombPosition)){
+            bombsArray.push(bombPosition);
+        }
+    }
+    console.log(bombsArray);
     // provato prima per tre ore con do while ma nada de nada de nada......
     //funzione per generare quadrato
     function createSquare(num){
@@ -49,7 +58,7 @@ btnPlay.addEventListener('click', function(){
             <span>${num}</span>
             `;
             square.addEventListener('click', function(){
-                this.classList.add('save')
+                this.classList.add('safe');
             })
             return square;
     } 
