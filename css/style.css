@@ -11,14 +11,16 @@ body{
 header, footer {
     width: 100%;
     background-color: var(--white);
+    padding: 0 20px;
 }
 header{
-    height: 100px;
+    height: 80px;
 }
 main{
-    height: calc(100vh - 180px);
+    height: calc(100vh - 130px);
     overflow-y: hidden;
 }
 footer{
-    height: 80px;
+    height: 50px;
+    line-height: 50px;
 }
