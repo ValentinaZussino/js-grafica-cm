@@ -21,6 +21,9 @@ const btnPlay = document.getElementById('play');
 
 // on click
 btnPlay.addEventListener('click', function(){
+    // prendo container grid e lo pulisco
+    const gridContainer = document.getElementById('grid-container');
+    gridContainer.innerHTML = '';
     // creo variabile per numero quadrati --> dipende dal livello selezionato quindi faccio subito
     let numSquares;
     const levelSelect = document.getElementById('level');
@@ -36,15 +39,34 @@ btnPlay.addEventListener('click', function(){
             numSquares = 49;
             break;
     }
-    console.log(level)
+    console.log(level);
+    console.log(numSquares);
+    
+    // provato prima per tre ore con do while ma nada de nada de nada......
     //funzione per generare quadrato
-    function createSquare(){
-        
-    }
+    function createSquare(num){
+            const square = document.createElement('div');
+            square.classList.add('square');
+            const square4Side = Math.sqrt(numSquares);
+            square.style.width = `calc(100% / ${square4Side})`;
+            square.style.height = `calc(100% / ${square4Side})`;
+            square.innerHTML = `
+            <span>${num}</span>
+            `;
+            return square;
+    } 
 
     //funzione per generare griglia
+    function createGrid(){
+        const grid = document.createElement('div');
+        grid.classList.add('container-grid');
+        for(let i = 1; i <= numSquares; i++){
+            const square = createSquare(i);
+            grid.appendChild(square);
+        }
+        gridContainer.appendChild(grid);
+    }
     
-
-    // chiamo funzione per generare griglia
-
+    // chiamo funzione griglia
+    createGrid();
 })

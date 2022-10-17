@@ -30,8 +30,8 @@ main{
 }
 .square {
     border: 1px solid black;
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+    /* width: calc(100% / 10);
+    height: calc(100% / 10); */
     display: flex;
     align-items: center;
     justify-content: center;
