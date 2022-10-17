@@ -18,22 +18,25 @@
 
 // prendo btn play
 const btnPlay = document.getElementById('play');
-// creo variabile per numero quadrati --> dipende dal livello selezionato quindi faccio subito
-let numSquares;
-const levelSelect = document.getElementById('level');
-const level = levelSelect.value;
-switch(level){
-    case 'easy':
-        default: numSquares = 100;
-        break;
-    case 'hard':
-        default: numSquares = 81;
-        break;
-    case 'crazy': 
-        default: numSquares = 49;
-}
+
 // on click
 btnPlay.addEventListener('click', function(){
+    // creo variabile per numero quadrati --> dipende dal livello selezionato quindi faccio subito
+    let numSquares;
+    const levelSelect = document.getElementById('level');
+    const level = levelSelect.value;
+    switch(level){
+        case 'easy':
+            default: numSquares = 100;
+            break;
+        case 'hard':
+            numSquares = 81;
+            break;
+        case 'crazy': 
+            numSquares = 49;
+            break;
+    }
+    console.log(level)
     //funzione per generare quadrato
     function createSquare(){
         
