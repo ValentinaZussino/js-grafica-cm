@@ -1,1 +1,24 @@
-body{background-color: aquamarine;}
+:root {
+    --white: white;
+}
+body{
+    background-color: rgb(98, 106, 254);
+    font-family: 'Roboto', sans-serif;
+}
+.main-wrapper {
+    height: 100vh;
+}
+header, footer {
+    width: 100%;
+    background-color: var(--white);
+}
+header{
+    height: 100px;
+}
+main{
+    height: calc(100vh - 180px);
+    overflow-y: hidden;
+}
+footer{
+    height: 80px;
+}
